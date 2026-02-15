@@ -1,0 +1,175 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  z-index: 1000;
+  right: 0px;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+nav ul li {
+  position: relative; /* Needed for submenu positioning */
+}
+nav ul li a {
+  display: block;
+  margin: 10px;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+}
+nav ul li a:hover {
+  background-color: #444;
+}
+
+/* Submenu styling */
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%; /* Below parent */
+  left: 0;
+  background-color: #58565644;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 150px;
+}
+nav ul li ul li a {
+  padding: 10px 15px;
+  color: #fff;
+}
+nav ul li ul li a:hover {
+  background-color: #555;
+}
+
+/* Show submenu on hover */
+nav ul li:hover ul {
+  display: block;
+}
+/* Sections */
+section {
+  min-height: auto;
+  max-width: 100%;
+  padding: 0px 0px; /* leave space for fixed nav */
+  text-align: center;
+  color: white;
+  display: flex;
+}
+
+#slider {
+  background: #222;
+  z-index: -1;
+}
+#about {
+  background: #555;
+  min-height: 100vh;
+}
+#contact {
+  background: #666;
+  min-height: 100vh;
+}
+
+/* Slider */
+.slider {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+.slides {
+  display: flex;
+  width: 100%; /* 5 boxes */
+  animation: slide 20s infinite;
+}
+.box {
+  flex: 1 0 100%; /* each box takes full width of slider */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+}
+.box1 {
+  background: crimson;
+}
+.box2 {
+  background: teal;
+}
+.box3 {
+  background: darkorange;
+}
+.box4 {
+  background: purple;
+}
+.box5 {
+  background: seagreen;
+}
+
+/* Animation */
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  45% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 20px;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.grid-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+}

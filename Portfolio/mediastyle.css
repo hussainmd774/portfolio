@@ -1,0 +1,33 @@
+@media (max-width: 600px) {
+  nav ul li a {
+    padding: 5px;
+    font-size: 14px;
+  }
+  nav ul li {
+    margin: 0 5px;
+  }
+  section {
+    padding: 5px 10px; /* leave space for fixed nav */
+    text-align: center;
+    color: white;
+    display: flex;
+  }
+  .box {
+    flex: 1 0 100%; /* each box takes full width of slider */
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+  }
+  section#slider {
+    height: 250px;
+  }
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
